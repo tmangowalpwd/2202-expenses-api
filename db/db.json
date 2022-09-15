@@ -1,7 +1,1 @@
-{
-  "expenses": [
-    { "id": 1, "name": "Bensin", "nominal": 10000, "category": "Transportasi" },
-    { "id": 1, "name": "Bensin", "nominal": 10000, "category": "Transportasi" }
-  ]
-}
-
+{"expenses":[]}

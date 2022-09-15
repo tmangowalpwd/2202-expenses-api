@@ -1,29 +1,16 @@
-// import express from "express"
-// import dotenv from "dotenv"
+import express from "express"
+import dotenv from "dotenv"
+import { expensesRoute } from "./routes/index.js"
 
-// dotenv.config()
-// const PORT = process.env.PORT
+dotenv.config()
+const PORT = process.env.PORT
 
-// const app = express()
+const app = express()
 
-// app.listen(PORT, () => {
-//   console.log("Server listening in port", PORT)
-// })
+app.use(express.json())
 
-// FileSystem
-import fs from "fs"
-import { readDB, writeDB } from "./db/index.js"
+app.use("/expenses", expensesRoute)
 
-// JSON string
-const dbObject = readDB()
-
-console.log(dbObject)
-
-dbObject.expenses.push({
-  id: 1,
-  name: "Bensin",
-  nominal: 10000,
-  category: "Transportasi"
+app.listen(PORT, () => {
+  console.log("Server listening in port", PORT)
 })
-
-writeDB(dbObject)
